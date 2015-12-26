@@ -1,0 +1,26 @@
+<?php $_code=$this->getMethodCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li>
+        <div class="input-box">
+            <label for="<?php echo $_code ?>_dd_number">
+                <?php echo $this->__('DD Number:') ?>
+                <span class="required">*</span>
+            </label>
+            <br />
+            <input type="text" title="<?php echo $this->__('DD Number') ?>" class="input-text required-entry" id="<?php echo $_code ?>_dd_number" name="payment[dd_number]" value="<?php echo $this->htmlEscape($this->getInfoData('dd_number')) ?>" />
+        </div>
+    </li>
+    <li>
+        <div class="input-box">
+            <label for="<?php echo $_code ?>_micr_code">
+                <?php echo $this->__('MICR Code:') ?>
+                <span class="required">*</span>
+            </label>
+            <br />
+            <input type="text" title="<?php echo $this->__('MICR Code:') ?>" class="input-text required-entry" id="<?php echo $_code ?>_micr_code" name="payment[micr_code]" value="<?php echo $this->htmlEscape($this->getInfoData('micr_code')) ?>" />
+        </div>
+    </li>
+</ul>
+<div>
+    <?php echo $this->getMethod()->getConfigData('message');?>
+</div>

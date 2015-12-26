@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Learn_Dd>
+            <version>1.0.0</version>
+        </Learn_Dd>
+    </modules>
+    
+    <frontend>
+        <routers>
+            <dd_pay>
+                <use>standard</use>
+                <args>
+                    <module>Learn_Dd</module>
+                    <frontName>ddpay</frontName>
+                </args>
+            </dd_pay>
+        </routers>
+    </frontend>
+    
+    <global>
+		<blocks>
+            <dd_pay>
+                <class>Learn_Dd_Block</class>
+            </dd_pay>
+        </blocks>
+		
+		<helpers>
+			<dd_pay>
+				<class>Learn_Dd_Helper</class>
+			</dd_pay>
+		</helpers>
+        
+		<models>
+			<dd_pay>
+				<class>Learn_Dd_Model</class>
+			</dd_pay>
+		</models> 
+        <fieldsets>
+            <sales_convert_quote_payment>
+                <dd_number>
+                    <to_order_payment>*</to_order_payment>
+                </dd_number>
+                <micr_code>
+                    <to_order_payment>*</to_order_payment>
+                </micr_code>
+            </sales_convert_quote_payment>
+        </fieldsets>
+        
+        <resources>
+            <ddpayment_setup>
+                <setup>
+                    <module>Learn_Dd</module>
+                </setup>
+            </ddpayment_setup>
+        </resources>
+    </global>
+	
+	<default>
+		<payment>
+			<dd_pay>
+				<active>1</active>
+                <model>dd_pay/dd_pay</model>
+				<order_status>pending</order_status>
+				<title>DD Payment</title>
+			</dd_pay>
+		</payment>
+	</default>
+</config>
